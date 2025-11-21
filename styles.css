@@ -1,0 +1,310 @@
+/* ==================================================
+   NÓRSKE FIRMY – FINÁLNY CSS (v2 – dátumy vľavo!)
+   Všetko funguje perfektne na desktop aj mobile
+================================================== */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+  color: #1e293b;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 0.5rem 0;
+  color: #1e40af;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* ==================================================
+   FORMULÁR – DÁTUMY VĽAVO + TLAČIDLO VPRAVO
+================================================== */
+form {
+  display: grid;
+  grid-template-columns: 1fr 300px 300px 200px;
+  gap: 1.5rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+/* Checkboxy na celej šírke */
+.field-group:nth-child(1) {
+  grid-column: 1 / -1;
+}
+
+/* Dátum "od" – úplne vľavo */
+.field-group:nth-child(2) {
+  grid-column: 1;
+}
+
+/* Dátum "do" – vedľa */
+.field-group:nth-child(3) {
+  grid-column: 2;
+}
+
+/* Tlačidlo úplne vpravo */
+#search-btn {
+  grid-column: 4;
+  height: fit-content;
+}
+
+/* ==================================================
+   INPUTY A LABELY
+================================================== */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+input[type="date"],
+input[type="text"] {
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+}
+
+/* ==================================================
+   CHECKBOXY – krajšie a moderné
+================================================== */
+.checkbox-search input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-container {
+  max-height: 340px;
+  overflow-y: auto;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background: #ffffff;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.checkbox-item:hover {
+  background: #f0f7ff;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #2563eb;
+}
+
+.checkbox-item label {
+  margin-left: 11px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+#selected-count {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* ==================================================
+   TLAČIDLÁ
+================================================== */
+button {
+  padding: 0.85rem 1.8rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+#search-btn {
+  background: #2563eb;
+  color: white;
+}
+
+#search-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+}
+
+#load-more-btn {
+  background: #e2e8f0;
+  color: #475569;
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+}
+
+#load-more-btn:hover {
+  background: #cbd5e1;
+}
+
+/* ==================================================
+   STATUS + TABUĽKA
+================================================== */
+#status {
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem;
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.6rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+th {
+  background: #f1f5f9;
+  text-align: left;
+  padding: 1.2rem 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+td {
+  padding: 1.1rem 1rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover td {
+  background: #eff6ff;
+}
+
+.company-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.company-name {
+  font-weight: 600;
+  color: #1e40af;
+  font-size: 1.05rem;
+}
+
+.google-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #4285f4;
+  color: white !important;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(66,133,244,0.3);
+  transition: all 0.2s;
+}
+
+.google-btn:hover {
+  background: #3367d6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(66,133,244,0.4);
+}
+
+.google-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+@media (max-width: 960px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+  .field-group:nth-child(1),
+  .field-group:nth-child(2),
+  .field-group:nth-child(3),
+  #search-btn {
+    grid-column: auto;
+  }
+  #search-btn {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body { padding: 1rem; }
+  .card { padding: 1.5rem; }
+  h1 { font-size: 1.7rem; }
+  .company-cell { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .google-btn { width: 100%; justify-content: center; }
+  th, td { padding: 0.9rem 0.6rem; font-size: 0.9rem; }
+}
